@@ -1,0 +1,34 @@
+{
+    "data": [
+        {
+            "iXPos": 0,
+            "iYPos": 0,
+            "value": 163
+        },
+        {
+            "iXPos": 1,
+            "iYPos": 0,
+            "value": 29
+        },
+        {
+            "iXPos": 1,
+            "iYPos": 1,
+            "value": 22
+        },
+        {
+            "iXPos": 2,
+            "iYPos": 1,
+            "value": 19
+        },
+        {
+            "iXPos": 2,
+            "iYPos": 2,
+            "value": 2
+        },
+        {
+            "iXPos": 2,
+            "iYPos": 3,
+            "value": 55
+        }
+    ]
+}
