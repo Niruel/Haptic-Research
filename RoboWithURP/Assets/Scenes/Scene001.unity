@@ -173,8 +173,8 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Constraints: 112
+  m_CollisionDetection: 1
 --- !u!135 &51602826
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -245,7 +245,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 51602823}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.2768}
+  m_LocalPosition: {x: 0, y: 0, z: 0.035}
   m_LocalScale: {x: 0.02986718, y: 0.02986718, z: 0.02986718}
   m_Children: []
   m_Father: {fileID: 0}
@@ -433,7 +433,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602925249}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.023779191, y: -0.704, z: -0.26438156}
+  m_LocalPosition: {x: -0.023779191, y: -0.704, z: -0.121}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -546,13 +546,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 844395448}
-  m_LocalRotation: {x: -0, y: 0.99678785, z: -0.080087885, w: 0}
-  m_LocalPosition: {x: 0, y: 1, z: 2}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -0.0000003095873, y: 0.075, z: 0.644}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 9.187, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &844395452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,31 +603,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 54ebdfa7e7eee87448b28a289525dce5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.20200002
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 54ebdfa7e7eee87448b28a289525dce5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.06
+      value: -0.204
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 54ebdfa7e7eee87448b28a289525dce5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.058
+      value: -0.14100002
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 54ebdfa7e7eee87448b28a289525dce5, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9984382
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 54ebdfa7e7eee87448b28a289525dce5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0.000000022120823
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 54ebdfa7e7eee87448b28a289525dce5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.055868644
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 54ebdfa7e7eee87448b28a289525dce5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.0000000064464984
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 54ebdfa7e7eee87448b28a289525dce5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -673,7 +673,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f72356eabf3d20439417b5a448552a0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.49
+      value: 0.032
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2f72356eabf3d20439417b5a448552a0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -758,9 +758,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaterialID: 0
   bGrabbing: 1
-  hMass: 0
+  hMass: 0.0279
   hStiffness: 0.2
-  hDamping: 0
+  hDamping: 0.217
   hImpulseD: 0
   hViscosity: 0
   hFrictionS: 0
@@ -896,7 +896,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1954588160}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.0472, z: -0.0222}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -921,12 +921,12 @@ MonoBehaviour:
   VisualizationMesh: {fileID: 1450261315}
   CollisionMesh: {fileID: 51602823}
   GrabObject: {fileID: 0}
-  ModelType: Not Connected
-  SerialNumber: Not Connected
-  DeviceHHD: -1
-  MaxForce: 0
-  MaxStiffness: 0
-  MaxDamping: 0
+  ModelType: Touch
+  SerialNumber: 16029002621
+  DeviceHHD: 0
+  MaxForce: 3.299999952316284
+  MaxStiffness: 0.5
+  MaxDamping: 0.003000000026077032
   CurrentPosition: {x: 0, y: 0, z: 0}
   CurrentVelocity: {x: 0, y: 0, z: 0}
   CurrentForce: {x: 0, y: 0, z: 0}
@@ -965,7 +965,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   masterCamera: {fileID: 844395450}
-  CameraDistance: 0.86
+  CameraDistance: 0.76
   FitToWorkspace: 1
   TransformAnchor: {fileID: 0}
   SceneLimit: 0
