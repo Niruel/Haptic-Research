@@ -603,7 +603,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 54ebdfa7e7eee87448b28a289525dce5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.20200002
+      value: -0.23030536
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 54ebdfa7e7eee87448b28a289525dce5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -611,23 +611,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 54ebdfa7e7eee87448b28a289525dce5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.14100002
+      value: -0.16257118
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 54ebdfa7e7eee87448b28a289525dce5, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9984382
+      value: 0.7660445
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 54ebdfa7e7eee87448b28a289525dce5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.000000022120823
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 54ebdfa7e7eee87448b28a289525dce5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.055868644
+      value: -0.6427876
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 54ebdfa7e7eee87448b28a289525dce5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000064464984
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 54ebdfa7e7eee87448b28a289525dce5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -635,7 +635,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 54ebdfa7e7eee87448b28a289525dce5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -80
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 54ebdfa7e7eee87448b28a289525dce5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -914,7 +914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 291b4ff7ce72bc642a8272270cb1e50d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeviceIdentifier: Default PHANToM
+  DeviceIdentifier: Default Device
   ConnectOnStart: 1
   ScaleToMeter: 1
   GlobalScale: 0.001
@@ -922,7 +922,7 @@ MonoBehaviour:
   CollisionMesh: {fileID: 51602823}
   GrabObject: {fileID: 0}
   ModelType: Touch
-  SerialNumber: 16029002621
+  SerialNumber: 22019000697
   DeviceHHD: 0
   MaxForce: 3.299999952316284
   MaxStiffness: 0.5
