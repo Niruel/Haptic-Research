@@ -376,3 +376,4 @@ Received Import Request.
   path: Assets/Room/models/chandiler.fbx
   artifactKey: Guid(39e174bc5459ec44f9f5e732a11cd5b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Room/models/chandiler.fbx using Guid(39e174bc5459ec44f9f5e732a11cd5b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96508bb3653cabcb8e872586840c1e28') in 0.080773 seconds 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
