@@ -1317,9 +1317,9 @@ MonoBehaviour:
   GimbalAngles: {x: 0, y: 0, z: 0}
   SimpleButtons: 1
   labelOnly: 
-  bButton1g: 0
-  bButton1r: 0
-  bButton1h: 1
+  bButton1g: 1
+  bButton1r: 1
+  bButton1h: 0
   labelOnly2: 
   bButton2g: 0
   bButton2r: 0
