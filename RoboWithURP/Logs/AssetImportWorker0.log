@@ -144,3 +144,10 @@ Received Import Request.
   path: Assets/Readme.asset
   artifactKey: Guid(83c2ed844a8c74b779a4c823d16594b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Readme.asset using Guid(83c2ed844a8c74b779a4c823d16594b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c3b9f17ff219922461d349995487975') in 0.015729 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 906.884573 seconds.
+  path: Assets/Scripts/info_Data_Exporter.cs
+  artifactKey: Guid(3fac60c97dcff1e47ad3361268f1bbd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/info_Data_Exporter.cs using Guid(3fac60c97dcff1e47ad3361268f1bbd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9748a72c67cee36edea1ae2b6bb028c6') in 0.103051 seconds 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
