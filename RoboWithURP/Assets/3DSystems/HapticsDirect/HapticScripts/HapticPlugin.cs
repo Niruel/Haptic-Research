@@ -122,7 +122,7 @@ public class HapticPlugin : MonoBehaviour
     #region Inspector
     // Plugin Menu 
 
-    private bool enablef = false;
+    //private bool enablef = false;
       
 
     [Header("Device Setup")]

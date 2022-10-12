@@ -353,6 +353,11 @@ MonoBehaviour:
   MaxWobble: 0.03
   WobbleSpeed: 1
   Recovery: 1
+  fill: 0.1279
+  h_vel_control_X: 0
+  h_vel_control_Z: 0
+  hPlugin: {fileID: 1954588162}
+  cupObj: {fileID: 1246711672}
 --- !u!1001 &356753449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1120,7 +1125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaterialID: 0
   bGrabbing: 1
-  hMass: 0.0279
+  hMass: 0.03654
   hStiffness: 0.2
   hDamping: 0.217
   hImpulseD: 0

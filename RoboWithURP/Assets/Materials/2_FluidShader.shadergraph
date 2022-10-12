@@ -1962,7 +1962,7 @@
     },
     "m_Name": "fill",
     "m_DefaultReferenceName": "Vector1_8b4e295310a84e9c9c1a51691d037cd3",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "m_fill",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,

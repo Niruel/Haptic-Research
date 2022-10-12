@@ -8,7 +8,7 @@ using System;
 public class GridManager : MonoBehaviour {
 
     private int[,] gridmap;//create 2d array
-    private float gridGran = 1.0f;
+    //private float gridGran = 1.0f;
     public Transform playerposition;
     public enum eDataState
     {

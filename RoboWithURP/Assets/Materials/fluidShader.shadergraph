@@ -1440,7 +1440,7 @@
     },
     "m_Name": "liquidFill",
     "m_DefaultReferenceName": "Vector1_4e303d24b3e54a489380760400c407dc",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "_fill",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
