@@ -353,7 +353,7 @@ MonoBehaviour:
   MaxWobble: 0.03
   WobbleSpeed: 1
   Recovery: 1
-  fill: 0.1279
+  fill: 0.606
   h_vel_control_X: 0
   h_vel_control_Z: 0
   hPlugin: {fileID: 1954588162}

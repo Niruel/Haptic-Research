@@ -9,7 +9,7 @@ public class FluidMove : MonoBehaviour
     public float WobbleSpeed = 1f;
     public float Recovery = 1f;
 
-    [Range(0, 0.1279f)] public float fill;
+    [Range(.54f, 0.606f)] public float fill;
     public float h_vel_control_X;
     public float h_vel_control_Z;
     public HapticPlugin hPlugin = null;
