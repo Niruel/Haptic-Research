@@ -9,12 +9,13 @@ public class FluidMove : MonoBehaviour
     public float WobbleSpeed = 1f;
     public float Recovery = 1f;
 
-    [Range(.54f, 0.606f)] public float fill;
+    
     public float h_vel_control_X;
     public float h_vel_control_Z;
-    public HapticPlugin hPlugin = null;
-    public GameObject cupObj;
+    
+
     Renderer rend;
+  
     Vector3 lastPos;
     Vector3 velocity;
     Vector3 lastRot;
@@ -26,7 +27,8 @@ public class FluidMove : MonoBehaviour
     float wobbleAmountToAddZ;
     float pulse;
     float time = 0.5f;
-    float curFill;
+    float fill=.54f;
+
 
 
     // Use this for initialization
@@ -34,6 +36,7 @@ public class FluidMove : MonoBehaviour
     {
         rend = GetComponent<Renderer>();
         rend.material.SetFloat("_fill", fill);
+       
 
 
     }
@@ -71,18 +74,7 @@ public class FluidMove : MonoBehaviour
         lastPos = transform.position;
         lastRot = transform.rotation.eulerAngles;
 
-        if (hPlugin != null)//&& hPlugin.bIsGrabbing
-        {
-            h_vel_control_X = hPlugin.CurrentVelocity.x;
-            h_vel_control_Z = hPlugin.CurrentVelocity.z;
-            Debug.Log( cupObj.transform.rotation.eulerAngles);
-            fill -= .05f*Time.deltaTime;
-            rend.material.SetFloat("_fill", fill);
-            if (fill < 0)
-            {
-                fill = 0;
-            }
-        }
+      
     }
 }
 
