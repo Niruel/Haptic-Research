@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class FluidMove : MonoBehaviour
 {
 
@@ -27,15 +28,19 @@ public class FluidMove : MonoBehaviour
     float wobbleAmountToAddZ;
     float pulse;
     float time = 0.5f;
-    float fill=.54f;
+    float fill=.58f;
 
-
+    Rigidbody rigidBody;
+    public GameObject ob;
+    
 
     // Use this for initialization
     void Start()
     {
         rend = GetComponent<Renderer>();
         rend.material.SetFloat("_fill", fill);
+        rigidBody = ob.GetComponent<Rigidbody>();
+
        
 
 
@@ -73,9 +78,13 @@ public class FluidMove : MonoBehaviour
         // keep last position
         lastPos = transform.position;
         lastRot = transform.rotation.eulerAngles;
-
+        float f;
+        f = Vector3.Magnitude(ob.transform.position);
+        Debug.Log(f);
       
     }
+
+   
 }
 
 
