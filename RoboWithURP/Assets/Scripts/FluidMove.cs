@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class FluidMove : MonoBehaviour
 {
+    public HapticPlugin hp;
 
     public float MaxWobble = 0.03f;
     public float WobbleSpeed = 1f;
@@ -28,7 +29,7 @@ public class FluidMove : MonoBehaviour
     float wobbleAmountToAddZ;
     float pulse;
     float time = 0.5f;
-    float fill=.58f;
+    float fill=.606f;
 
     Rigidbody rigidBody;
     public GameObject ob;
@@ -42,8 +43,6 @@ public class FluidMove : MonoBehaviour
         rigidBody = ob.GetComponent<Rigidbody>();
 
        
-
-
     }
     private void Update()
     {
@@ -78,12 +77,36 @@ public class FluidMove : MonoBehaviour
         // keep last position
         lastPos = transform.position;
         lastRot = transform.rotation.eulerAngles;
+       
+        
+
+        if (hp.bIsGrabbing)
+        {
+            StartCoroutine("CheckSpill");
+        }
+        if (!hp.bIsGrabbing)
+        {
+            StopCoroutine("CheckSpill");
+        }
+      
+    }
+    private void FixedUpdate()
+    {
+        
+    }
+    IEnumerator CheckSpill()
+    {
         float f;
         f = Vector3.Magnitude(ob.transform.position);
         Debug.Log(f);
-      
-    }
 
+        if (f> .25f)
+        {
+            fill -= 0.005f * Time.deltaTime;
+            rend.material.SetFloat("_fill", fill);
+        }
+        yield return new WaitForFixedUpdate();
+    }
    
 }
 

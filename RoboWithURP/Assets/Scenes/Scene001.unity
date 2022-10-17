@@ -758,6 +758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86f589c6c1a82e14baf34f448dddedb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: {fileID: 0}
   MaxWobble: 0.03
   WobbleSpeed: 1
   Recovery: 1
@@ -1617,6 +1618,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8221334688049757824, guid: 4df9940af3e8f964fbae28758d8b1f8f, type: 3}
+      propertyPath: hp
+      value: 
+      objectReference: {fileID: 1954588162}
     - target: {fileID: 8221334688606557324, guid: 4df9940af3e8f964fbae28758d8b1f8f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1631,11 +1636,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8221334688930897573, guid: 4df9940af3e8f964fbae28758d8b1f8f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.1624705
+      value: -0.1622
       objectReference: {fileID: 0}
     - target: {fileID: 8221334688930897573, guid: 4df9940af3e8f964fbae28758d8b1f8f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.272
+      value: -0.2066
       objectReference: {fileID: 0}
     - target: {fileID: 8221334688930897573, guid: 4df9940af3e8f964fbae28758d8b1f8f, type: 3}
       propertyPath: m_LocalRotation.w
