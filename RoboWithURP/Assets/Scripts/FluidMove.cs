@@ -77,23 +77,20 @@ public class FluidMove : MonoBehaviour
         // keep last position
         lastPos = transform.position;
         lastRot = transform.rotation.eulerAngles;
-       
-        
 
-        if (hp.bIsGrabbing)
+
+        // SimulateSpill();
+       
+        Debug.Log("X = "+ ob.transform.rotation.x + "Z =" + ob.transform.rotation.z);
+
+        if (ob.transform.rotation.x>.3f)
         {
-            StartCoroutine("CheckSpill");
-        }
-        if (!hp.bIsGrabbing)
-        {
-            StopCoroutine("CheckSpill");
+            fill -= 0.005f * Time.deltaTime;
+            rend.material.SetFloat("_fill", fill);
         }
       
     }
-    private void FixedUpdate()
-    {
-        
-    }
+   
     IEnumerator CheckSpill()
     {
         float f;
@@ -106,6 +103,19 @@ public class FluidMove : MonoBehaviour
             rend.material.SetFloat("_fill", fill);
         }
         yield return new WaitForFixedUpdate();
+    }
+
+    void SimulateSpill()
+    {
+
+        if (hp.bIsGrabbing)
+        {
+            StartCoroutine("CheckSpill");
+        }
+        if (!hp.bIsGrabbing)
+        {
+            StopCoroutine("CheckSpill");
+        }
     }
    
 }
