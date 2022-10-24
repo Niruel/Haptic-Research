@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,12 +11,9 @@ public class FluidMove : MonoBehaviour
     public float WobbleSpeed = 1f;
     public float Recovery = 1f;
 
-    
-    public float h_vel_control_X;
-    public float h_vel_control_Z;
-    
-
+   
     Renderer rend;
+    HapticMaterial h_mat;
   
     Vector3 lastPos;
     Vector3 velocity;
@@ -30,6 +27,7 @@ public class FluidMove : MonoBehaviour
     float pulse;
     float time = 0.5f;
     float fill=.606f;
+   
 
     Rigidbody rigidBody;
     public GameObject ob;
@@ -41,6 +39,8 @@ public class FluidMove : MonoBehaviour
         rend = GetComponent<Renderer>();
         rend.material.SetFloat("_fill", fill);
         rigidBody = ob.GetComponent<Rigidbody>();
+        h_mat = ob.GetComponent<HapticMaterial>();
+        
 
        
     }
@@ -79,25 +79,32 @@ public class FluidMove : MonoBehaviour
         lastRot = transform.rotation.eulerAngles;
 
 
-        // SimulateSpill();
-       
-        Debug.Log("X = "+ ob.transform.rotation.x + "Z =" + ob.transform.rotation.z);
-
-        if (ob.transform.rotation.x>.3f)
+         SimulateSpill();
+       //check how the cup is 
+       //while at a certian point check the rotation 
+       //drop the fill amount
+        Debug.Log("X = "+ ob.transform.rotation.x + " Z =" + ob.transform.rotation.z);
+        Debug.Log(fill);
+        if (fill　>.58f  && ob.transform.rotation.x > .12f || ob.transform.rotation.x < -.12f || ob.transform.rotation.z > .12f || ob.transform.rotation.z < -.12f)
         {
-            fill -= 0.005f * Time.deltaTime;
-            rend.material.SetFloat("_fill", fill);
+            
+            {
+                fill -= 0.005f * Time.deltaTime;
+                h_mat.hMass-=0.005f*Time.deltaTime;
+                rend.material.SetFloat("_fill", fill);
+            }
         }
+      
       
     }
    
     IEnumerator CheckSpill()
     {
-        float f;
-        f = Vector3.Magnitude(ob.transform.position);
-        Debug.Log(f);
+        float magnitude;
+        magnitude = Vector3.Magnitude(ob.transform.position);
+        Debug.Log(magnitude);
 
-        if (f> .25f)
+        if (magnitude > .25f)
         {
             fill -= 0.005f * Time.deltaTime;
             rend.material.SetFloat("_fill", fill);
@@ -119,6 +126,4 @@ public class FluidMove : MonoBehaviour
     }
    
 }
-
-
 

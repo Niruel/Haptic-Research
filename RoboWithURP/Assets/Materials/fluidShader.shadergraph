@@ -1397,7 +1397,7 @@
     "m_Guid": {
         "m_GuidSerialized": "5d58b107-b0b1-49af-978a-efeefb2256d0"
     },
-    "m_Name": "resnel",
+    "m_Name": "fresnel",
     "m_DefaultReferenceName": "Color_44298842780f4eaba52e0fd1566e91ed",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
@@ -2290,7 +2290,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
     "m_ObjectId": "819c320fdea24b86a195ba43919a72d0",
     "m_Id": 0,
-    "m_DisplayName": "resnel",
+    "m_DisplayName": "fresnel",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
