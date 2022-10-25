@@ -7,7 +7,7 @@ public class FluidMove : MonoBehaviour
 {
     public HapticPlugin hp;
 
-    public float MaxWobble = 0.03f;
+    public float MaxWobble = 0.003f;
     public float WobbleSpeed = 1f;
     public float Recovery = 1f;
 
@@ -26,7 +26,7 @@ public class FluidMove : MonoBehaviour
     float wobbleAmountToAddZ;
     float pulse;
     float time = 0.5f;
-    float fill=.606f;
+    float fill=.6f;
    
 
     Rigidbody rigidBody;
