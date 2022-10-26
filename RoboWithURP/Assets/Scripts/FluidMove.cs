@@ -47,7 +47,7 @@ public class FluidMove : MonoBehaviour
     private void Update()
     {
         //fill about adjust
-       // rend.material.SetFloat("_fill", fill);
+        // rend.material.SetFloat("_fill", fill);
 
         time += Time.deltaTime;
         // decrease wobble over time
@@ -80,43 +80,62 @@ public class FluidMove : MonoBehaviour
 
 
          SimulateSpill();
-       //check how the cup is 
-       //while at a certian point check the rotation 
-       //drop the fill amount
-        Debug.Log("X = "+ ob.transform.rotation.x + " Z =" + ob.transform.rotation.z);
-        Debug.Log(fill);
-        if (fill　>.58f  && ob.transform.rotation.x > .12f || ob.transform.rotation.x < -.12f || ob.transform.rotation.z > .12f || ob.transform.rotation.z < -.12f)
+        //check how the cup is 
+        //while at a certian point check the rotation 
+        //drop the fill amount
+        // Debug.Log("X = " + ob.transform.rotation.x + " Z =" + ob.transform.rotation.z);
+        //Debug.Log(fill);
+
+        Debug.Log(ob.transform.up);
+      
+        if (fill > .58f && h_mat.hMass > 0)
         {
-            
+
+
+            if (ob.transform.rotation.x > .12f || ob.transform.rotation.x < -.12f || ob.transform.rotation.z > .12f || ob.transform.rotation.z < -.12f)
             {
-                fill -= 0.005f * Time.deltaTime;
-                h_mat.hMass-=0.005f*Time.deltaTime;
-                rend.material.SetFloat("_fill", fill);
+
+                {
+                    fill -= 0.005f * Time.deltaTime;
+                    h_mat.hMass -= 0.05f * Time.deltaTime;
+                    rend.material.SetFloat("_fill", fill);
+                }
             }
         }
       
-      
+
+  
     }
    
     IEnumerator CheckSpill()
     {
+        
         float magnitude;
         magnitude = Vector3.Magnitude(ob.transform.position);
-        Debug.Log(magnitude);
 
-        if (magnitude > .25f)
+        if (fill > .589f && h_mat.hMass>0)
         {
-            fill -= 0.005f * Time.deltaTime;
-            rend.material.SetFloat("_fill", fill);
+
+
+            if (magnitude > .25f && magnitude < .28)
+            {
+                //Debug.Log("Magnitude " + magnitude + " fill " + fill);
+                fill -= 0.005f * Time.deltaTime;
+                h_mat.hMass -= 0.05f * Time.deltaTime;
+               
+                rend.material.SetFloat("_fill", fill);
+            }
         }
+        
         yield return new WaitForFixedUpdate();
     }
 
     void SimulateSpill()
     {
-
+        
         if (hp.bIsGrabbing)
         {
+
             StartCoroutine("CheckSpill");
         }
         if (!hp.bIsGrabbing)
