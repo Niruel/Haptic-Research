@@ -7,14 +7,17 @@ public class FluidMove : MonoBehaviour
 {
     public HapticPlugin hp;
 
-    [Range(.0001f,.0009f)]public float MaxWobble = 0.003f;
+    [Range(.0001f,.0009f)]public float MaxWobble = 0.0003f;
     public float WobbleSpeed = 1f;
     public float Recovery = 1f;
+    [SerializeField] float decrement_mass = 0.0005f;
+    [SerializeField] float decrement_fill = 0.0005f;
 
    
     Renderer rend;
     HapticMaterial h_mat;
-  
+    
+
     Vector3 lastPos;
     Vector3 velocity;
     Vector3 lastRot;
@@ -25,7 +28,7 @@ public class FluidMove : MonoBehaviour
     float wobbleAmountToAddX;
     float wobbleAmountToAddZ;
     float pulse;
-    float time = 0.5f;
+    float time = 0.0005f;
     float fill=.6f;
    
 
@@ -46,6 +49,7 @@ public class FluidMove : MonoBehaviour
     }
     private void Update()
     {
+
         //fill about adjust
         // rend.material.SetFloat("_fill", fill);
 
@@ -83,10 +87,10 @@ public class FluidMove : MonoBehaviour
         //check how the cup is 
         //while at a certian point check the rotation 
         //drop the fill amount
-        // Debug.Log("X = " + ob.transform.rotation.x + " Z =" + ob.transform.rotation.z);
+        //Debug.Log("X = " + ob.transform.rotation.x + " Z =" + ob.transform.rotation.z);
         //Debug.Log(fill);
 
-        Debug.Log(ob.transform.up);
+      
       
         if (fill > .58f && h_mat.hMass > 0)
         {
@@ -96,8 +100,8 @@ public class FluidMove : MonoBehaviour
             {
 
                 {
-                    fill -= 0.005f * Time.deltaTime;
-                    h_mat.hMass -= 0.05f * Time.deltaTime;
+                    fill -= decrement_fill * Time.deltaTime;
+                    h_mat.hMass -= decrement_mass * Time.deltaTime;
                     rend.material.SetFloat("_fill", fill);
                 }
             }
@@ -112,6 +116,7 @@ public class FluidMove : MonoBehaviour
         
         float magnitude;
         magnitude = Vector3.Magnitude(ob.transform.position);
+        Debug.Log(h_mat.hMass);
 
         if (fill > .589f && h_mat.hMass>0)
         {
@@ -120,9 +125,8 @@ public class FluidMove : MonoBehaviour
             if (magnitude > .25f && magnitude < .28)
             {
                 //Debug.Log("Magnitude " + magnitude + " fill " + fill);
-                fill -= 0.005f * Time.deltaTime;
-                h_mat.hMass -= 0.05f * Time.deltaTime;
-               
+                fill -= decrement_fill * Time.deltaTime;
+                h_mat.hMass -= decrement_mass * Time.deltaTime;
                 rend.material.SetFloat("_fill", fill);
             }
         }

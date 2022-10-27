@@ -8,7 +8,7 @@ public class info_Data_Exporter : MonoBehaviour
 {
     public GameObject gO;
     HapticPlugin hp;
-    Rigidbody rb;
+    Transform cup_transform;
     
     
     string fileName = "";
@@ -33,8 +33,8 @@ public class info_Data_Exporter : MonoBehaviour
     public DataList dataList = new DataList();
     private void Start()
     {
-        hp = gO.GetComponent<HapticPlugin>();// grab the haptic actor component
-         rb = gO.GetComponent<Rigidbody>();
+        //hp = gO.GetComponent<HapticPlugin>();// grab the haptic actor component
+         cup_transform = gO.GetComponent<Transform>();
         
         fileName = Application.dataPath + "/Data.csv";
         TextWriter t_Writer = new StreamWriter(fileName, false);
@@ -46,9 +46,9 @@ public class info_Data_Exporter : MonoBehaviour
     {
             
        
-            //WriteToCSV();
+            WriteToCSV();
             //Debug.Log(hp.CurrentVelocity);
-        Debug.Log(hp.CurrentPosition);
+        //Debug.Log(hp.CurrentPosition);
   
         
         
@@ -63,9 +63,9 @@ public class info_Data_Exporter : MonoBehaviour
             for (int i = 0; i < dataList.dataItems.Length; i++)
             {
                 t_Writer.WriteLine(dataList.dataItems[i].name + "," +
-                    dataList.dataItems[i].x + rb.worldCenterOfMass.x.ToString() + ","
-                    + dataList.dataItems[i].y + rb.worldCenterOfMass.y.ToString() + "," +
-                    dataList.dataItems[i].z + rb.worldCenterOfMass.z.ToString());
+                    dataList.dataItems[i].x + cup_transform.position.x.ToString() + ","
+                    + dataList.dataItems[i].y + cup_transform.position.y.ToString() + "," +
+                    dataList.dataItems[i].z + cup_transform.position.z.ToString());
             }
 
           
