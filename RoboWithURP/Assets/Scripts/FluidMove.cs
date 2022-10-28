@@ -10,8 +10,8 @@ public class FluidMove : MonoBehaviour
     [Range(.0001f,.0009f)]public float MaxWobble = 0.0003f;
     public float WobbleSpeed = 1f;
     public float Recovery = 1f;
-    [SerializeField] float decrement_mass = 0.0005f;
-    [SerializeField] float decrement_fill = 0.0005f;
+    [SerializeField] float decrement_mass = 0.005f;
+    [SerializeField] float decrement_fill = 0.005f;
 
    
     Renderer rend;
@@ -28,7 +28,7 @@ public class FluidMove : MonoBehaviour
     float wobbleAmountToAddX;
     float wobbleAmountToAddZ;
     float pulse;
-    float time = 0.0005f;
+    float time = 0.005f;
     float fill=.6f;
    
 
@@ -90,20 +90,26 @@ public class FluidMove : MonoBehaviour
         //Debug.Log("X = " + ob.transform.rotation.x + " Z =" + ob.transform.rotation.z);
         //Debug.Log(fill);
 
-      
-      
-        if (fill > .58f && h_mat.hMass > 0)
+
+        Debug.Log(h_mat.hMass);
+      // if (fill > .589f) //&& h_mat.hMass > 0
         {
 
 
             if (ob.transform.rotation.x > .12f || ob.transform.rotation.x < -.12f || ob.transform.rotation.z > .12f || ob.transform.rotation.z < -.12f)
             {
 
-                {
+                
                     fill -= decrement_fill * Time.deltaTime;
-                    h_mat.hMass -= decrement_mass * Time.deltaTime;
                     rend.material.SetFloat("_fill", fill);
-                }
+                    if (h_mat.hMass>0)
+                    {
+                        h_mat.hMass -= decrement_mass * Time.deltaTime;
+                    }
+                    else
+                    {
+                        h_mat.hMass = 0;
+                    }  
             }
         }
       
@@ -118,7 +124,7 @@ public class FluidMove : MonoBehaviour
         magnitude = Vector3.Magnitude(ob.transform.position);
         Debug.Log(h_mat.hMass);
 
-        if (fill > .589f && h_mat.hMass>0)
+        if (fill > .589f) // && h_mat.hMass>0
         {
 
 
@@ -126,8 +132,17 @@ public class FluidMove : MonoBehaviour
             {
                 //Debug.Log("Magnitude " + magnitude + " fill " + fill);
                 fill -= decrement_fill * Time.deltaTime;
-                h_mat.hMass -= decrement_mass * Time.deltaTime;
                 rend.material.SetFloat("_fill", fill);
+                if (h_mat.hMass > 0)
+                {
+                    h_mat.hMass -= decrement_mass * Time.deltaTime;
+                }
+                else
+                {
+                    h_mat.hMass = 0;
+                }
+                
+                
             }
         }
         
