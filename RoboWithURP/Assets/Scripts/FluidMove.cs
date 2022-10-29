@@ -127,7 +127,7 @@ public class FluidMove : MonoBehaviour
         if (fill > .589f) // && h_mat.hMass>0
         {
 
-
+            
             if (magnitude > .25f && magnitude < .28)
             {
                 //Debug.Log("Magnitude " + magnitude + " fill " + fill);
