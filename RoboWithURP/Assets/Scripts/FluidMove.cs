@@ -47,7 +47,7 @@ public class FluidMove : MonoBehaviour
 
        
     }
-    private void Update()
+    private void FixedUpdate()
     {
 
         //fill about adjust
@@ -84,6 +84,7 @@ public class FluidMove : MonoBehaviour
 
 
          SimulateSpill();
+
         //check how the cup is 
         //while at a certian point check the rotation 
         //drop the fill amount
@@ -91,10 +92,10 @@ public class FluidMove : MonoBehaviour
         //Debug.Log(fill);
 
 
-        Debug.Log(h_mat.hMass);
+       // Debug.Log(h_mat.hMass);
       // if (fill > .589f) //&& h_mat.hMass > 0
         {
-
+            
 
             if (ob.transform.rotation.x > .12f || ob.transform.rotation.x < -.12f || ob.transform.rotation.z > .12f || ob.transform.rotation.z < -.12f)
             {
@@ -112,7 +113,7 @@ public class FluidMove : MonoBehaviour
                     }  
             }
         }
-      
+            //Debug.Log(rigidBody.velocity.x);
 
   
     }
@@ -122,13 +123,12 @@ public class FluidMove : MonoBehaviour
         
         float magnitude;
         magnitude = Vector3.Magnitude(ob.transform.position);
-        Debug.Log(h_mat.hMass);
-
+        
         if (fill > .589f) // && h_mat.hMass>0
         {
 
             
-            if (magnitude > .25f && magnitude < .28)
+            if ( magnitude > .25f && magnitude < .28)
             {
                 //Debug.Log("Magnitude " + magnitude + " fill " + fill);
                 fill -= decrement_fill * Time.deltaTime;
