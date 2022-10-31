@@ -97,21 +97,21 @@ public class FluidMove : MonoBehaviour
         {
             
 
-            if (ob.transform.rotation.x > .12f || ob.transform.rotation.x < -.12f || ob.transform.rotation.z > .12f || ob.transform.rotation.z < -.12f)
-            {
+            //if (ob.transform.rotation.x > .12f || ob.transform.rotation.x < -.12f || ob.transform.rotation.z > .12f || ob.transform.rotation.z < -.12f)
+            //{
 
                 
-                    fill -= decrement_fill * Time.deltaTime;
-                    rend.material.SetFloat("_fill", fill);
-                    if (h_mat.hMass>0)
-                    {
-                        h_mat.hMass -= decrement_mass * Time.deltaTime;
-                    }
-                    else
-                    {
-                        h_mat.hMass = 0;
-                    }  
-            }
+            //        fill -= decrement_fill * Time.deltaTime;
+            //        rend.material.SetFloat("_fill", fill);
+            //        if (h_mat.hMass>0)
+            //        {
+            //            h_mat.hMass -= decrement_mass * Time.deltaTime;
+            //        }
+            //        else
+            //        {
+            //            h_mat.hMass = 0;
+            //        }  
+            //}
         }
             //Debug.Log(rigidBody.velocity.x);
 
@@ -123,6 +123,7 @@ public class FluidMove : MonoBehaviour
         
         float magnitude;
         magnitude = Vector3.Magnitude(ob.transform.position);
+        Debug.Log(rigidBody.velocity.x);
         
         if (fill > .589f) // && h_mat.hMass>0
         {
