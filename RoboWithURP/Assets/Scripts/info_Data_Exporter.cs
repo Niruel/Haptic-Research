@@ -6,8 +6,8 @@ using System.IO;
 
 public class info_Data_Exporter : MonoBehaviour
 {
-    public GameObject gO;
-    HapticPlugin hp;
+    //public GameObject go;
+    public HapticPlugin hp;
     Transform cup_transform;
     
     
@@ -22,7 +22,7 @@ public class info_Data_Exporter : MonoBehaviour
         public float y;
         public float z;
 
-        
+       
     }
 
     [System.Serializable]
@@ -33,8 +33,8 @@ public class info_Data_Exporter : MonoBehaviour
     public DataList dataList = new DataList();
     private void Start()
     {
-        //hp = gO.GetComponent<HapticPlugin>();// grab the haptic actor component
-         cup_transform = gO.GetComponent<Transform>();
+        //hp = go.GetComponent<HapticPlugin>();// grab the haptic actor component
+         //cup_transform = go.GetComponent<Transform>();
         
         fileName = Application.dataPath + "/Data.csv";
         TextWriter t_Writer = new StreamWriter(fileName, false);
@@ -45,9 +45,10 @@ public class info_Data_Exporter : MonoBehaviour
     private void Update()
     {
             
-       
+            
             WriteToCSV();
-            //Debug.Log(hp.CurrentVelocity);
+
+            Debug.Log(hp.CurrentVelocity.x.ToString());
         //Debug.Log(hp.CurrentPosition);
   
         
@@ -56,22 +57,35 @@ public class info_Data_Exporter : MonoBehaviour
 
     public void WriteToCSV()
     {
-        if (dataList.dataItems.Length>0)
+        if (hp.bIsGrabbing)
         {
-            
+
+        
+        if (dataList.dataItems.Length > 0)
+        {
+
             TextWriter t_Writer = new StreamWriter(fileName, true);
             for (int i = 0; i < dataList.dataItems.Length; i++)
             {
-                t_Writer.WriteLine(dataList.dataItems[i].name + "," +
-                    dataList.dataItems[i].x + cup_transform.position.x.ToString() + ","
-                    + dataList.dataItems[i].y + cup_transform.position.y.ToString() + "," +
-                    dataList.dataItems[i].z + cup_transform.position.z.ToString());
+
+                    // you need to remember to set correct types
+                    float x = dataList.dataItems[i].x + hp.CurrentVelocity.x;
+                    float y = dataList.dataItems[i].y + hp.CurrentVelocity.y;
+                    float z = dataList.dataItems[i].z + hp.CurrentVelocity.z;
+
+                    t_Writer.WriteLine(dataList.dataItems[i].name + "," + x + "," + y + "," + z);
+
+                    //t_Writer.WriteLine(dataList.dataItems[i].name + "," +
+                    //dataList.dataItems[i].x + hp.CurrentVelocity.x.ToString() + ","
+                    //+ dataList.dataItems[i].y + hp.CurrentVelocity.y.ToString() + "," +
+                    //dataList.dataItems[i].z + hp.CurrentVelocity.z.ToString());
             }
 
-          
-               t_Writer.Close();
-          
-            
-        }
+
+            t_Writer.Close();
+
+
+        } 
+    }
     }
 }

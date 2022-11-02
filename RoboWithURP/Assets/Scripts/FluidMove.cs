@@ -96,7 +96,7 @@ public class FluidMove : MonoBehaviour
       // if (fill > .589f) //&& h_mat.hMass > 0
         {
             
-
+            
             //if (ob.transform.rotation.x > .12f || ob.transform.rotation.x < -.12f || ob.transform.rotation.z > .12f || ob.transform.rotation.z < -.12f)
             //{
 
@@ -123,7 +123,7 @@ public class FluidMove : MonoBehaviour
         
         float magnitude;
         magnitude = Vector3.Magnitude(ob.transform.position);
-        Debug.Log(rigidBody.velocity.x);
+      //  Debug.Log(rigidBody.velocity.x);
         
         if (fill > .589f) // && h_mat.hMass>0
         {
@@ -155,7 +155,7 @@ public class FluidMove : MonoBehaviour
         
         if (hp.bIsGrabbing)
         {
-
+            //Debug.Log(hp.CurrentVelocity.x);
             StartCoroutine("CheckSpill");
         }
         if (!hp.bIsGrabbing)
