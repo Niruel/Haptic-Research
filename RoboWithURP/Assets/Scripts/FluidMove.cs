@@ -83,7 +83,7 @@ public class FluidMove : MonoBehaviour
         lastRot = transform.rotation.eulerAngles;
 
 
-         SimulateSpill();
+        // SimulateSpill();
 
         //check how the cup is 
         //while at a certian point check the rotation 

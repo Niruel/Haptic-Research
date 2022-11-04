@@ -48,7 +48,7 @@ public class info_Data_Exporter : MonoBehaviour
             
             WriteToCSV();
 
-            Debug.Log(hp.CurrentVelocity.x.ToString());
+        
         //Debug.Log(hp.CurrentPosition);
   
         
@@ -57,21 +57,23 @@ public class info_Data_Exporter : MonoBehaviour
 
     public void WriteToCSV()
     {
+        //Vector3 normalized = Vector3.Normalize(hp.CurrentVelocity);
         if (hp.bIsGrabbing)
         {
+            Debug.Log("X:" + hp.CurrentVelocity.x*Time.deltaTime + " Y:" + hp.CurrentVelocity.y*Time.deltaTime + " Z:" + hp.CurrentVelocity.z*Time.deltaTime);
 
-        
-        if (dataList.dataItems.Length > 0)
+            if (dataList.dataItems.Length > 0)
         {
 
             TextWriter t_Writer = new StreamWriter(fileName, true);
             for (int i = 0; i < dataList.dataItems.Length; i++)
             {
 
-                    // you need to remember to set correct types
-                    float x = dataList.dataItems[i].x + hp.CurrentVelocity.x;
-                    float y = dataList.dataItems[i].y + hp.CurrentVelocity.y;
-                    float z = dataList.dataItems[i].z + hp.CurrentVelocity.z;
+                    //if you are concatanating a nuber write line is a string so 
+                    //numbers must be added before put in the string to be written
+                    float x = dataList.dataItems[i].x + (hp.CurrentVelocity.x*Time.deltaTime);
+                    float y = dataList.dataItems[i].y + (hp.CurrentVelocity.y * Time.deltaTime);
+                    float z = dataList.dataItems[i].z + (hp.CurrentVelocity.z * Time.deltaTime);
 
                     t_Writer.WriteLine(dataList.dataItems[i].name + "," + x + "," + y + "," + z);
 
