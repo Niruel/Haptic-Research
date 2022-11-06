@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static info_Data_Exporter;
 
 
 public class FluidMove : MonoBehaviour
@@ -83,7 +84,7 @@ public class FluidMove : MonoBehaviour
         lastRot = transform.rotation.eulerAngles;
 
 
-        // SimulateSpill();
+         SimulateSpill();
 
         //check how the cup is 
         //while at a certian point check the rotation 
@@ -92,26 +93,26 @@ public class FluidMove : MonoBehaviour
         //Debug.Log(fill);
 
 
-       // Debug.Log(h_mat.hMass);
-      // if (fill > .589f) //&& h_mat.hMass > 0
+        // Debug.Log(h_mat.hMass);
+       // if (fill > .589f) //&& h_mat.hMass > 0
         {
-            
-            
-            //if (ob.transform.rotation.x > .12f || ob.transform.rotation.x < -.12f || ob.transform.rotation.z > .12f || ob.transform.rotation.z < -.12f)
-            //{
 
-                
-            //        fill -= decrement_fill * Time.deltaTime;
-            //        rend.material.SetFloat("_fill", fill);
-            //        if (h_mat.hMass>0)
-            //        {
-            //            h_mat.hMass -= decrement_mass * Time.deltaTime;
-            //        }
-            //        else
-            //        {
-            //            h_mat.hMass = 0;
-            //        }  
-            //}
+
+            if (ob.transform.rotation.x > .12f || ob.transform.rotation.x < -.12f || ob.transform.rotation.z > .12f || ob.transform.rotation.z < -.12f)
+            {
+
+
+                fill -= decrement_fill * Time.deltaTime;
+                rend.material.SetFloat("_fill", fill);
+                if (h_mat.hMass > 0)
+                {
+                    h_mat.hMass -= decrement_mass * Time.deltaTime;
+                }
+                else
+                {
+                    h_mat.hMass = 0;
+                }
+            }
         }
             //Debug.Log(rigidBody.velocity.x);
 
@@ -123,16 +124,20 @@ public class FluidMove : MonoBehaviour
         
         float magnitude;
         magnitude = Vector3.Magnitude(ob.transform.position);
-      //  Debug.Log(rigidBody.velocity.x);
-        
-        if (fill > .589f) // && h_mat.hMass>0
+        float hp_x =  Mathf.Abs(hp.CurrentVelocity.x);
+        float hp_y =  Mathf.Abs(hp.CurrentVelocity.y);
+        float hp_z =  Mathf.Abs(hp.CurrentVelocity.z);
+        //  Debug.Log(rigidBody.velocity.x);
+
+       // if (fill > .589f) // && h_mat.hMass>0
         {
 
             
-            if ( magnitude > .25f && magnitude < .28)
+            if ( hp_x > 50f || hp_z> 50f)
             {
+
                 //Debug.Log("Magnitude " + magnitude + " fill " + fill);
-                fill -= decrement_fill * Time.deltaTime;
+                fill -=  decrement_fill * Time.deltaTime;
                 rend.material.SetFloat("_fill", fill);
                 if (h_mat.hMass > 0)
                 {
