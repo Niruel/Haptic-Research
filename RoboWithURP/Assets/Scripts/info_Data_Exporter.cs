@@ -71,7 +71,7 @@ public class info_Data_Exporter : MonoBehaviour
 
                     //if you are concatanating a nuber write line is a string so 
                     //numbers must be added before put in the string to be written
-                    float x = dataList.dataItems[i].x + (hp.CurrentVelocity.x*Time.deltaTime);
+                    float x = dataList.dataItems[i].x + (hp.CurrentVelocity.x * Time.deltaTime);
                     float y = dataList.dataItems[i].y + (hp.CurrentVelocity.y * Time.deltaTime);
                     float z = dataList.dataItems[i].z + (hp.CurrentVelocity.z * Time.deltaTime);
 
