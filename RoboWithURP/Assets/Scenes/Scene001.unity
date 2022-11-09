@@ -667,6 +667,8 @@ MonoBehaviour:
   Recovery: 1
   decrement_mass: 0.0005
   decrement_fill: 0.0005
+  max_Mass: 0
+  min_Mass: 0
   ob: {fileID: 0}
 --- !u!1001 &707861548
 PrefabInstance:
@@ -1850,8 +1852,10 @@ MonoBehaviour:
   MaxWobble: 0.000122
   WobbleSpeed: 1
   Recovery: 1
-  decrement_mass: 0.005
+  decrement_mass: 0.05
   decrement_fill: 0.005
+  max_Mass: 0.451
+  min_Mass: 0.168
   ob: {fileID: 5831103916026923156}
 --- !u!1001 &2097613458
 PrefabInstance:

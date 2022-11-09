@@ -13,10 +13,12 @@ public class FluidMove : MonoBehaviour
     public float Recovery = 1f;
     [SerializeField] float decrement_mass = 0.005f;
     [SerializeField] float decrement_fill = 0.005f;
-
+    [SerializeField] float max_Mass;
+    [SerializeField] float min_Mass;
    
     Renderer rend;
     HapticMaterial h_mat;
+    
     
 
     Vector3 lastPos;
@@ -44,6 +46,7 @@ public class FluidMove : MonoBehaviour
         rend.material.SetFloat("_fill", fill);
         rigidBody = ob.GetComponent<Rigidbody>();
         h_mat = ob.GetComponent<HapticMaterial>();
+        h_mat.hMass = max_Mass;
         
 
        
@@ -104,13 +107,13 @@ public class FluidMove : MonoBehaviour
 
                 fill -= decrement_fill * Time.deltaTime;
                 rend.material.SetFloat("_fill", fill);
-                if (h_mat.hMass > 0)
+                if (h_mat.hMass > min_Mass)
                 {
                     h_mat.hMass -= decrement_mass * Time.deltaTime;
                 }
                 else
                 {
-                    h_mat.hMass = 0;
+                    h_mat.hMass = min_Mass;
                 }
             }
         }
@@ -139,13 +142,13 @@ public class FluidMove : MonoBehaviour
                 //Debug.Log("Magnitude " + magnitude + " fill " + fill);
                 fill -=  decrement_fill * Time.deltaTime;
                 rend.material.SetFloat("_fill", fill);
-                if (h_mat.hMass > 0)
+                if (h_mat.hMass > min_Mass)
                 {
                     h_mat.hMass -= decrement_mass * Time.deltaTime;
                 }
                 else
                 {
-                    h_mat.hMass = 0;
+                    h_mat.hMass = min_Mass;
                 }
                 
                 
