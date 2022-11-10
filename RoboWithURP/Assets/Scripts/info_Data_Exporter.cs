@@ -6,7 +6,7 @@ using System.IO;
 
 public class info_Data_Exporter : MonoBehaviour
 {
-    //public GameObject go;
+    public GameObject go;
     public HapticPlugin hp;
     Transform cup_transform;
     
@@ -34,9 +34,9 @@ public class info_Data_Exporter : MonoBehaviour
     private void Start()
     {
         //hp = go.GetComponent<HapticPlugin>();// grab the haptic actor component
-         //cup_transform = go.GetComponent<Transform>();
+        cup_transform = go.GetComponent<Transform>();
         
-        fileName = Application.dataPath + "/Data.csv";
+        fileName = Application.dataPath + "\\Data.csv";
         TextWriter t_Writer = new StreamWriter(fileName, false);
         t_Writer.WriteLine("Name, X, Y, Z");
         t_Writer.Close();
@@ -44,15 +44,7 @@ public class info_Data_Exporter : MonoBehaviour
     }
     private void Update()
     {
-            
-            
-            WriteToCSV();
-
-        
-        //Debug.Log(hp.CurrentPosition);
-  
-        
-        
+        WriteToCSV();  
     }
 
     public void WriteToCSV()
@@ -63,31 +55,26 @@ public class info_Data_Exporter : MonoBehaviour
             Debug.Log("X:" + hp.CurrentVelocity.x*Time.deltaTime + " Y:" + hp.CurrentVelocity.y*Time.deltaTime + " Z:" + hp.CurrentVelocity.z*Time.deltaTime);
 
             if (dataList.dataItems.Length > 0)
-        {
-
-            TextWriter t_Writer = new StreamWriter(fileName, true);
-            for (int i = 0; i < dataList.dataItems.Length; i++)
             {
 
-                    //if you are concatanating a nuber write line is a string so 
-                    //numbers must be added before put in the string to be written
-                    float x = dataList.dataItems[i].x + (Mathf.Abs(hp.CurrentVelocity.x));
-                    float y = dataList.dataItems[i].y + (Mathf.Abs(hp.CurrentVelocity.y));
-                    float z = dataList.dataItems[i].z + (Mathf.Abs(hp.CurrentVelocity.z));
+                TextWriter t_Writer = new StreamWriter(fileName, true);
+                for (int i = 0; i < dataList.dataItems.Length; i++)
+                {
+                    //float x = dataList.dataItems[i].x + (Mathf.Abs(hp.CurrentVelocity.x));
+                    //float y = dataList.dataItems[i].y + (Mathf.Abs(hp.CurrentVelocity.y));
+                    //float z = dataList.dataItems[i].z + (Mathf.Abs(hp.CurrentVelocity.z));
+
+                    float x = dataList.dataItems[i].x + cup_transform.position.x;
+                    float y = dataList.dataItems[i].y + cup_transform.position.y;
+                    float z = dataList.dataItems[i].z + cup_transform.position.z;
 
                     t_Writer.WriteLine(dataList.dataItems[i].name + "," + x + "," + y + "," + z);
 
-                    //t_Writer.WriteLine(dataList.dataItems[i].name + "," +
-                    //dataList.dataItems[i].x + hp.CurrentVelocity.x.ToString() + ","
-                    //+ dataList.dataItems[i].y + hp.CurrentVelocity.y.ToString() + "," +
-                    //dataList.dataItems[i].z + hp.CurrentVelocity.z.ToString());
-            }
-
-
+                }
             t_Writer.Close();
 
 
-        } 
-    }
+            } 
+        }
     }
 }
