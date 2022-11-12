@@ -530,7 +530,7 @@ MonoBehaviour:
   hp: {fileID: 1080622732}
   dataList:
     dataItems:
-    - name: ' Velocity'
+    - name: Cup_Velocity
       x: 0
       y: 0
       z: 0

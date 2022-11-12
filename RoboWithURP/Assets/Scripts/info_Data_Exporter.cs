@@ -35,11 +35,20 @@ public class info_Data_Exporter : MonoBehaviour
     {
         //hp = go.GetComponent<HapticPlugin>();// grab the haptic actor component
         cup_transform = go.GetComponent<Transform>();
+        string dir = Application.dataPath + "\\Data\\";
+        string fName= dataList.dataItems[0].name + ".csv";
+        fileName = dir + "\\" + fName;
+        if (!Directory.Exists(dir))
+        {
+            Directory.CreateDirectory(dir);
+        }
+        else
+        {
+            TextWriter t_Writer = new StreamWriter(fileName, false);
+            t_Writer.WriteLine("Name, X, Y, Z");
+            t_Writer.Close();
+        }
         
-        fileName = Application.dataPath + "\\Data.csv";
-        TextWriter t_Writer = new StreamWriter(fileName, false);
-        t_Writer.WriteLine("Name, X, Y, Z");
-        t_Writer.Close();
 
     }
     private void Update()
@@ -50,7 +59,7 @@ public class info_Data_Exporter : MonoBehaviour
     public void WriteToCSV()
     {
         //Vector3 normalized = Vector3.Normalize(hp.CurrentVelocity);
-        if (hp.bIsGrabbing)
+       // if (hp.bIsGrabbing)
         {
             Debug.Log("X:" + hp.CurrentVelocity.x*Time.deltaTime + " Y:" + hp.CurrentVelocity.y*Time.deltaTime + " Z:" + hp.CurrentVelocity.z*Time.deltaTime);
 
