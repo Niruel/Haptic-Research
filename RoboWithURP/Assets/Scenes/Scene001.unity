@@ -528,10 +528,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 5831103916026923156}
   hp: {fileID: 1080622732}
-  timeManager: {fileID: 5831103916026923157}
   dataList:
     dataItems:
-    - name: 
+    - name: News
       x: 0
       y: 0
       z: 0

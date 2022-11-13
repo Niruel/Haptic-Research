@@ -8,10 +8,10 @@ public class info_Data_Exporter : MonoBehaviour
 {
     public GameObject go;
     public HapticPlugin hp;
-    public GameManagement timeManager;
+    
     Transform cup_transform;
-    
-    
+
+    float timeCounter;
     string fileName = "";
 
     [System.Serializable]
@@ -34,9 +34,10 @@ public class info_Data_Exporter : MonoBehaviour
     public DataList dataList = new DataList();
     private void Start()
     {
-        //dataList.dataItems[3].time=timeManager.timer;
+        
         //hp = go.GetComponent<HapticPlugin>();// grab the haptic actor component
         cup_transform = go.GetComponent<Transform>();
+        
         string dir = Application.dataPath + "\\Data\\";
         string fName= dataList.dataItems[0].name + ".csv";
         fileName = dir + "\\" + fName;
@@ -47,7 +48,7 @@ public class info_Data_Exporter : MonoBehaviour
         else
         {
             TextWriter t_Writer = new StreamWriter(fileName, false);
-            t_Writer.WriteLine("Name, X, Y, Z, Time");
+            t_Writer.WriteLine("X, Y, Z, Time");
             t_Writer.Close();
         }
         
@@ -55,16 +56,19 @@ public class info_Data_Exporter : MonoBehaviour
     }
     private void Update()
     {
+        
         WriteToCSV();  
     }
 
     public void WriteToCSV()
     {
         //Vector3 normalized = Vector3.Normalize(hp.CurrentVelocity);
-       // if (hp.bIsGrabbing)
+        // if (hp.bIsGrabbing)
         {
             //Debug.Log("X:" + hp.CurrentVelocity.x*Time.deltaTime + " Y:" + hp.CurrentVelocity.y*Time.deltaTime + " Z:" + hp.CurrentVelocity.z*Time.deltaTime);
 
+
+            timeCounter += Time.deltaTime;
             if (dataList.dataItems.Length > 0)
             {
 
@@ -78,9 +82,9 @@ public class info_Data_Exporter : MonoBehaviour
                     float x = dataList.dataItems[i].x + cup_transform.position.x;
                     float y = dataList.dataItems[i].y + cup_transform.position.y;
                     float z = dataList.dataItems[i].z + cup_transform.position.z;
-                    float time = dataList.dataItems[i].time;    
+                    float time = dataList.dataItems[i].time + timeCounter;    
 
-                    t_Writer.WriteLine(dataList.dataItems[i].name + "," + x + "," + y + "," + z, "," + time);
+                    t_Writer.WriteLine(  x + "," + y + ","  + z + ","+ time);
 
                 }
             t_Writer.Close();

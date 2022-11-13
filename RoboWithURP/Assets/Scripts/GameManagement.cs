@@ -28,7 +28,7 @@ public class GameManagement : MonoBehaviour
         {
            
             exitTrigger = true;
-            Debug.Log(other.name + " Exit");
+            //Debug.Log(other.name + " Exit");
         }
          
     }
@@ -37,22 +37,22 @@ public class GameManagement : MonoBehaviour
         if (other.name=="EndPos")
         {
             exitTrigger=false;
-            StopTimer();
-            Debug.Log(other.name + " Enter");
+           // StopTimer();
+           // Debug.Log(other.name + " Enter");
         }
         
     }
     void StartTimer()
     {
         timer+=Time.deltaTime;
-        Debug.Log(timer);
+        //Debug.Log(timer);
     }
     void StopTimer()
     {
         if (timer!=0f)
         {
            // timer = 0f;
-            Debug.Log(timer);
+            //Debug.Log(timer);
         }
     }
 }

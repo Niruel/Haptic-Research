@@ -91,8 +91,8 @@
     <Compile Include="Assets\3DSystems\HapticsDirect\HapticScripts\HapticGUI\Validator\ValidateValueAttribute.cs" />
     <Compile Include="Assets\3DSystems\HapticsDirect\HapticScripts\HapticGUI\Utils.cs" />
     <Compile Include="Assets\3DSystems\HapticsDirect\HapticScripts\HapticGUI\Validator\ValidateAttribute.cs" />
-    <Compile Include="Assets\3DSystems\HapticsDirect\HapticScripts\HapticGUI\StyledDecoratorAttribute.cs" />
     <Compile Include="Assets\Scripts\GameManagement.cs" />
+    <Compile Include="Assets\3DSystems\HapticsDirect\HapticScripts\HapticGUI\StyledDecoratorAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
