@@ -53,9 +53,8 @@ public class FluidMove : MonoBehaviour
     }
     private void FixedUpdate()
     {
-
-        //fill about adjust
-        // rend.material.SetFloat("_fill", fill);
+        #region Slosh effect
+        
 
         time += Time.deltaTime;
         // decrease wobble over time
@@ -85,15 +84,10 @@ public class FluidMove : MonoBehaviour
         // keep last position
         lastPos = transform.position;
         lastRot = transform.rotation.eulerAngles;
+        #endregion
 
+        SimulateSpill();
 
-         SimulateSpill();
-
-        //check how the cup is 
-        //while at a certian point check the rotation 
-        //drop the fill amount
-        //Debug.Log("X = " + ob.transform.rotation.x + " Z =" + ob.transform.rotation.z);
-        //Debug.Log(fill);
 
 
         // Debug.Log(h_mat.hMass);
@@ -125,8 +119,8 @@ public class FluidMove : MonoBehaviour
     IEnumerator CheckSpill()
     {
         
-        float magnitude;
-        magnitude = Vector3.Magnitude(ob.transform.position);
+        //float magnitude;
+       // magnitude = Vector3.Magnitude(ob.transform.position);
         float hp_x =  Mathf.Abs(hp.CurrentVelocity.x);
         float hp_y =  Mathf.Abs(hp.CurrentVelocity.y);
         float hp_z =  Mathf.Abs(hp.CurrentVelocity.z);

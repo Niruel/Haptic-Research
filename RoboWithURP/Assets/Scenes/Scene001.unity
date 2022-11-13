@@ -528,12 +528,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   go: {fileID: 5831103916026923156}
   hp: {fileID: 1080622732}
+  timeManager: {fileID: 5831103916026923157}
   dataList:
     dataItems:
-    - name: Cup_Velocity
+    - name: 
       x: 0
       y: 0
       z: 0
+      time: 0
 --- !u!1 &844395448
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,7 +832,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 889278386}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.021200001, y: 0.0157, z: -0.207}
+  m_LocalPosition: {x: -0.0323, y: 0.0157, z: -0.1865}
   m_LocalScale: {x: 0.35397997, y: 0.35397997, z: 0.35397997}
   m_Children: []
   m_Father: {fileID: 0}
@@ -847,8 +849,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.43836653, y: 0.57834333, z: 0.4368975}
-  m_Center: {x: -0.12718157, y: -0.21082923, z: 0.114397794}
+  m_Size: {x: 0.43836653, y: 0.33820674, z: 0.43689752}
+  m_Center: {x: -0.12718157, y: -0.33089775, z: 0.11439779}
 --- !u!1 &1006396049
 GameObject:
   m_ObjectHideFlags: 0
@@ -1174,6 +1176,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4368101801063984, guid: e701c442dd73c844b9f5a0c6ed6e59e1, type: 3}
   m_PrefabInstance: {fileID: 1165160681}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1259018544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1259018546}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1259018546
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259018544}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1318936755 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1404747353185902, guid: a5ab52c5408d7e0499ce5e019116f6e3, type: 3}
@@ -2024,7 +2056,7 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
+  m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
@@ -2164,6 +2196,7 @@ GameObject:
   - component: {fileID: 1508641792}
   - component: {fileID: 1508641793}
   - component: {fileID: 1508641791}
+  - component: {fileID: 5831103916026923157}
   m_Layer: 0
   m_Name: coffeecup
   m_TagString: Untagged
@@ -2171,6 +2204,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5831103916026923157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5831103916026923156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 103197b8b6d998a4c8c3ee4bdd279034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 0
 --- !u!33 &6216170617976849036
 MeshFilter:
   m_ObjectHideFlags: 0
