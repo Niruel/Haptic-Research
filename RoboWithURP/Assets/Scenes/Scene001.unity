@@ -530,7 +530,7 @@ MonoBehaviour:
   hp: {fileID: 1080622732}
   dataList:
     dataItems:
-    - name: News
+    - name: LightCup
       x: 0
       y: 0
       z: 0
@@ -2055,7 +2055,7 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 0
+  m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0

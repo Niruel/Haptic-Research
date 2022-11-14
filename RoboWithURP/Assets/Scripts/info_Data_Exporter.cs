@@ -18,10 +18,10 @@ public class info_Data_Exporter : MonoBehaviour
     public class DataItem
     {
         public string name;
-        public float x;
-        public float y;
-        public float z;
-        public float time;
+       [HideInInspector] public float x;
+       [HideInInspector] public float y;
+       [HideInInspector] public float z;
+       [HideInInspector] public float time;
 
        
     }
@@ -63,11 +63,8 @@ public class info_Data_Exporter : MonoBehaviour
     public void WriteToCSV()
     {
         //Vector3 normalized = Vector3.Normalize(hp.CurrentVelocity);
-        // if (hp.bIsGrabbing)
-        {
-            //Debug.Log("X:" + hp.CurrentVelocity.x*Time.deltaTime + " Y:" + hp.CurrentVelocity.y*Time.deltaTime + " Z:" + hp.CurrentVelocity.z*Time.deltaTime);
-
-
+        if (hp.bIsGrabbing)
+        {        
             timeCounter += Time.deltaTime;
             if (dataList.dataItems.Length > 0)
             {
