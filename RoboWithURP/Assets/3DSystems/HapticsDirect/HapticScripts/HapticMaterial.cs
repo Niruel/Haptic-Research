@@ -47,7 +47,7 @@ public class HapticMaterial : MonoBehaviour
     [FieldProperties("Grabbing", true)] public bool bGrabbing = false;
 
     [Label(title = "Mass")]
-    [Slider(0, 1)]
+    [Slider(0, 1.5f)]
     public float hMass = 0.0f;
     [Label(title = "Stiffness")]
     [Slider(0, 1)]

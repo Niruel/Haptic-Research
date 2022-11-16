@@ -550,7 +550,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &575312941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -890,11 +890,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fac60c97dcff1e47ad3361268f1bbd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  go: {fileID: 575312940}
+  go: {fileID: 5831103916026923156}
   hp: {fileID: 1080622732}
   dataList:
     dataItems:
-    - name: Mickey
+    - name: Polka
       x: 0
       y: 0
       z: 0
@@ -2985,7 +2985,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &5831103916026923157
 MonoBehaviour:
   m_ObjectHideFlags: 0
