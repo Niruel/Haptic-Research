@@ -1,16 +1,26 @@
-﻿using System.Collections;
+﻿using UnityEditor;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static info_Data_Exporter;
+
 
 
 public class FluidMove : MonoBehaviour
 {
+    
     public HapticPlugin hp;
 
-    [Range(.0001f,.0009f)]public float MaxWobble = 0.0003f;
+    
+    public GameObject cup_obj;
+
+    [Range(.0001f,.0009f)]
+    public float MaxWobble = 0.0003f;
+    
     public float WobbleSpeed = 1f;
+    
     public float Recovery = 1f;
+
+
     [SerializeField] float decrement_mass = 0.005f;
     [SerializeField] float decrement_fill = 0.005f;
     [SerializeField] float max_Mass;
@@ -36,7 +46,7 @@ public class FluidMove : MonoBehaviour
    
 
     Rigidbody rigidBody;
-    public GameObject ob;
+    
     
 
     // Use this for initialization
@@ -44,8 +54,8 @@ public class FluidMove : MonoBehaviour
     {
         rend = GetComponent<Renderer>();
         rend.material.SetFloat("_fill", fill);
-        rigidBody = ob.GetComponent<Rigidbody>();
-        h_mat = ob.GetComponent<HapticMaterial>();
+        rigidBody = cup_obj.GetComponent<Rigidbody>();
+        h_mat = cup_obj.GetComponent<HapticMaterial>();
         h_mat.hMass = max_Mass;
         
 
@@ -88,14 +98,14 @@ public class FluidMove : MonoBehaviour
 
         SimulateSpill();
 
-
+        
 
         // Debug.Log(h_mat.hMass);
        // if (fill > .589f) //&& h_mat.hMass > 0
         {
 
 
-            if (ob.transform.rotation.x > .12f || ob.transform.rotation.x < -.12f || ob.transform.rotation.z > .12f || ob.transform.rotation.z < -.12f)
+            if (cup_obj.transform.rotation.x > .12f || cup_obj.transform.rotation.x < -.12f || cup_obj.transform.rotation.z > .12f || cup_obj.transform.rotation.z < -.12f)
             {
 
 
