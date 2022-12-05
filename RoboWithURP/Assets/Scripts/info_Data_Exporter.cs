@@ -62,7 +62,7 @@ public class info_Data_Exporter : MonoBehaviour
 
     public void WriteToCSV()
     {
-        //Vector3 normalized = Vector3.Normalize(hp.CurrentVelocity);
+        
         if (hp.bIsGrabbing)
         {        
             timeCounter += Time.deltaTime;
@@ -82,6 +82,7 @@ public class info_Data_Exporter : MonoBehaviour
                     float time = dataList.dataItems[i].time + timeCounter;    
 
                     t_Writer.WriteLine(  x + "," + y + ","  + z + ","+ time);
+                    
 
                 }
             t_Writer.Close();

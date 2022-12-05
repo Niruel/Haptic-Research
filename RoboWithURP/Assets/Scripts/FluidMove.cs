@@ -2,24 +2,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-
+using System;
 
 public class FluidMove : MonoBehaviour
 {
     
     public HapticPlugin hp;
-
-    
     public GameObject cup_obj;
-
     [Range(.0001f,.0009f)]
     public float MaxWobble = 0.0003f;
-    
     public float WobbleSpeed = 1f;
-    
     public float Recovery = 1f;
-
+    public Color color;
 
     [SerializeField] float decrement_mass = 0.005f;
     [SerializeField] float decrement_fill = 0.005f;
@@ -45,16 +39,12 @@ public class FluidMove : MonoBehaviour
     float fill=.6f;
    
 
-    Rigidbody rigidBody;
-    
-    
-
     // Use this for initialization
     void Start()
     {
         rend = GetComponent<Renderer>();
         rend.material.SetFloat("_fill", fill);
-        rigidBody = cup_obj.GetComponent<Rigidbody>();
+        rend.material.SetColor("_color", color);
         h_mat = cup_obj.GetComponent<HapticMaterial>();
         h_mat.hMass = max_Mass;
         
@@ -98,52 +88,21 @@ public class FluidMove : MonoBehaviour
 
         SimulateSpill();
 
-        
-
-        // Debug.Log(h_mat.hMass);
-       // if (fill > .589f) //&& h_mat.hMass > 0
-        {
-
-
-            if (cup_obj.transform.rotation.x > .12f || cup_obj.transform.rotation.x < -.12f || cup_obj.transform.rotation.z > .12f || cup_obj.transform.rotation.z < -.12f)
-            {
-
-
-                fill -= decrement_fill * Time.deltaTime;
-                rend.material.SetFloat("_fill", fill);
-                if (h_mat.hMass > min_Mass)
-                {
-                    h_mat.hMass -= decrement_mass * Time.deltaTime;
-                }
-                else
-                {
-                    h_mat.hMass = min_Mass;
-                }
-            }
-        }
-            //Debug.Log(rigidBody.velocity.x);
-
-  
     }
    
     IEnumerator CheckSpill()
     {
         
-        //float magnitude;
-       // magnitude = Vector3.Magnitude(ob.transform.position);
+       
         float hp_x =  Mathf.Abs(hp.CurrentVelocity.x);
         float hp_y =  Mathf.Abs(hp.CurrentVelocity.y);
         float hp_z =  Mathf.Abs(hp.CurrentVelocity.z);
-        //  Debug.Log(rigidBody.velocity.x);
+        
 
-       // if (fill > .589f) // && h_mat.hMass>0
-        {
-
-            
             if ( hp_x > 50f || hp_z> 50f)
             {
 
-                //Debug.Log("Magnitude " + magnitude + " fill " + fill);
+               
                 fill -=  decrement_fill * Time.deltaTime;
                 rend.material.SetFloat("_fill", fill);
                 if (h_mat.hMass > min_Mass)
@@ -157,8 +116,30 @@ public class FluidMove : MonoBehaviour
                 
                 
             }
-        }
+      
         
+        yield return new WaitForFixedUpdate();
+    }
+
+    IEnumerator CheckRotation()
+    {
+        if (cup_obj.transform.rotation.x > .12f || cup_obj.transform.rotation.x < -.12f || cup_obj.transform.rotation.z > .12f || cup_obj.transform.rotation.z < -.12f)
+        {
+
+
+            fill -= decrement_fill * Time.deltaTime;
+            rend.material.SetFloat("_fill", fill);
+            if (h_mat.hMass > min_Mass)
+            {
+                h_mat.hMass -= decrement_mass * Time.deltaTime;
+            }
+            else
+            {
+                h_mat.hMass = min_Mass;
+            }
+        }
+
+
         yield return new WaitForFixedUpdate();
     }
 
@@ -167,12 +148,13 @@ public class FluidMove : MonoBehaviour
         
         if (hp.bIsGrabbing)
         {
-            //Debug.Log(hp.CurrentVelocity.x);
-            StartCoroutine("CheckSpill");
+            StartCoroutine(CheckRotation());
+            StartCoroutine(CheckSpill());
         }
         if (!hp.bIsGrabbing)
         {
-            StopCoroutine("CheckSpill");
+            StopCoroutine(CheckRotation());
+            StopCoroutine(CheckSpill());
         }
     }
    
