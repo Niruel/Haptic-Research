@@ -74,6 +74,7 @@
     <Compile Include="Assets\3DSystems\HapticsDirect\HapticScripts\HapticGUI\DynamicValue.cs" />
     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\3DSystems\HapticsDirect\HapticScripts\HapticGUI\PropertyUtils.cs" />
+    <Compile Include="Assets\UIController.cs" />
     <Compile Include="Assets\3DSystems\HapticsDirect\HapticScripts\HapticGUI\Validator\AssetOnlyAttribute.cs" />
     <Compile Include="Assets\3DSystems\HapticsDirect\HapticScripts\HapticGUI\StackableFieldAttribute.cs" />
     <Compile Include="Assets\3DSystems\HapticsDirect\HapticScripts\HapticPainter.cs" />
@@ -93,7 +94,6 @@
     <Compile Include="Assets\3DSystems\HapticsDirect\HapticScripts\HapticGUI\Validator\ValidateAttribute.cs" />
     <Compile Include="Assets\Scripts\GameManagement.cs" />
     <Compile Include="Assets\3DSystems\HapticsDirect\HapticScripts\HapticGUI\StyledDecoratorAttribute.cs" />
-    <Compile Include="Assets\UIController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
