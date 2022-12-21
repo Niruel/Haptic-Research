@@ -2196,7 +2196,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &575312942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2333,7 +2333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1067853811198812, guid: f5a1bb1bf8641274c88db4c73f943ae4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1067853811198812, guid: f5a1bb1bf8641274c88db4c73f943ae4, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3302,11 +3302,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fac60c97dcff1e47ad3361268f1bbd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  go: {fileID: 1366577298}
+  go: {fileID: 575312940}
   hp: {fileID: 1080622732}
   dataList:
     dataItems:
-    - name: jake_stripes_X2
+    - name: Enia_micky_books_X
       x: 0
       y: 0
       z: 0
@@ -5257,7 +5257,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1366577300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5836,7 +5836,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431164753}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4393245, y: 0.0062, z: -0.18097143}
+  m_LocalPosition: {x: -0.4393245, y: 0.223, z: -0.18097143}
   m_LocalScale: {x: 0.30716655, y: 0.30716655, z: 0.30716655}
   m_Children:
   - {fileID: 873727062}
@@ -6508,7 +6508,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1067853811198812, guid: f5a1bb1bf8641274c88db4c73f943ae4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1067853811198812, guid: f5a1bb1bf8641274c88db4c73f943ae4, type: 3}
       propertyPath: m_StaticEditorFlags
