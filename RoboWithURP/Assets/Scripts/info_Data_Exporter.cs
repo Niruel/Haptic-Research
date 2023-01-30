@@ -72,13 +72,13 @@ public class info_Data_Exporter : MonoBehaviour
                 TextWriter t_Writer = new StreamWriter(fileName, true);
                 for (int i = 0; i < dataList.dataItems.Length; i++)
                 {
-                    //float x = dataList.dataItems[i].x + (Mathf.Abs(hp.CurrentVelocity.x));
-                    //float y = dataList.dataItems[i].y + (Mathf.Abs(hp.CurrentVelocity.y));
-                    //float z = dataList.dataItems[i].z + (Mathf.Abs(hp.CurrentVelocity.z));
+                    float x = dataList.dataItems[i].x + (Mathf.Abs(hp.CurrentVelocity.x));
+                    float y = dataList.dataItems[i].y + (Mathf.Abs(hp.CurrentVelocity.y));
+                    float z = dataList.dataItems[i].z + (Mathf.Abs(hp.CurrentVelocity.z));
 
-                    float x = dataList.dataItems[i].x + cup_transform.position.x;
-                    float y = dataList.dataItems[i].y + cup_transform.position.y;
-                    float z = dataList.dataItems[i].z + cup_transform.position.z;
+                    //float x = dataList.dataItems[i].x + cup_transform.position.x;
+                    //float y = dataList.dataItems[i].y + cup_transform.position.y;
+                    //float z = dataList.dataItems[i].z + cup_transform.position.z;
                     float time = dataList.dataItems[i].time + timeCounter;    
 
                     t_Writer.WriteLine(  x + "," + y + ","  + z + ","+ time);
